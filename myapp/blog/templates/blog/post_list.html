@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>post_list</title>
+</head>
+<body>
+    <div>
+        <a href="/"><h1>Djangoのサンプル</h1></a>
+    </div>
+
+    <!-- Postの内容 -->
+    {% for post in posts %}
+        <div style="margin-top: 50px;">
+            <h2>title: <a href="">{{post.title}}</a></h2>
+            <p>published: {{post.published_date}}</p>
+            <p>{{post.text | linebreaks}}</p>
+        </div>
+    {% endfor %}
+
+    <p style="color: red;">Hi there!</p>
+    <p>It works!</p>
+    <p>門松です！</p>
+    <ul>
+        {% for post in posts %}
+            <li>{{post}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
